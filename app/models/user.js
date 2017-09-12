@@ -77,6 +77,36 @@ UserSchema.methods.authenticate = function(password, next) {
         next(isMatch);
     });
 };
+
+/**
+ * method findUniqueUsername
+ * verify if username already exists
+ * join with suffix the username
+ * use the method findOne of the mongoose
+ * if username don't exist, execute the callback
+ * @param username
+ * @param next
+ */
+UserSchema.statics.findUniqueUsername = function(username, next)
+{
+    this.findOne({username: username}, (err, user) =>{
+        if (err){
+            return next(err);
+        }
+        
+        if( !user ){
+            return next(false);
+        }
+
+        return next({
+            errors: {
+                username: {
+                    message: `This user [${username}] alredy exists!`
+                }
+            }
+        });
+    });
+};
 /**config 'UserSchema' for use getters and virtuals when is transformed in JSON*/
 UserSchema.set('toJSON', {
     getters: true,

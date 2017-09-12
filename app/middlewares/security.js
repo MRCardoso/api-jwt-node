@@ -9,24 +9,22 @@ exports.hasAuthorization = function(req, res, next) {
     if (token)
     {
         var decoded = jwt.decode(token, credentials.mySecret);
-        console.log('decodando ' + decoded);
         
         if (decoded.exp <= Date.now()) {
-            res.status(400).send({message: 'Acesso Expirado, faça login novamente'});
+            res.status(400).send({message: 'Token expired, please make the login agains'});
         }
         
         User.findOne({ _id: decoded.iss }, function(err, user) {
             if(err)
             {
                 return res.status(500).send({
-                    message: "erro ao procurar usuario do token."
+                    message: "Erro to find the token of the user."
                 });
             }
             req.user = user;
-            console.log('achei usuario ' + req.user)
             return next();
         });
     } else {
-        res.status(401).send({message: 'Token não encontrado ou informado'})
+        res.status(401).send({message: 'Token is required!'})
     }
 };
