@@ -1,1 +1,6 @@
 api-jwt-node.json
+create.sh
+start.sh
+node_modules/
+config/env
+config/credentials.js
