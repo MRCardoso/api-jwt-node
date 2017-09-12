@@ -72,3 +72,10 @@ POST /api/login
   "message": "the fail message"
 }
 ```
+
+|URL|Method|Description|
+|---|------|-----------|
+|/api/login|POST| Authenticate a user in the api|
+|/api/users/create|POST| Create a user in the app|
+|/api/users|GET| List all user of the app|
+
