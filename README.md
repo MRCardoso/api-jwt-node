@@ -7,6 +7,14 @@ Are three parths, splited by dot(.), encoded with base64 individually:
 
 ### availables requests
 
+
+|URL|Method|Description|
+|---|------|-----------|
+|/|GET| The Home page of the system|
+|/api/login|POST| Authenticate a user in the app|
+|/api/users/create|POST| Create a user in the app|
+|/api/users|GET| List all user of the app|
+
 ### home page
 
 GET '/'
@@ -72,10 +80,3 @@ POST /api/login
   "message": "the fail message"
 }
 ```
-
-|URL|Method|Description|
-|---|------|-----------|
-|/api/login|POST| Authenticate a user in the api|
-|/api/users/create|POST| Create a user in the app|
-|/api/users|GET| List all user of the app|
-
