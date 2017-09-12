@@ -16,9 +16,6 @@ Are three parths, splited by dot(.), encoded with base64 individually:
 |/api/users|GET| List all user of the app|
 
 ### home page
-
-GET '/'
-
 ```Javascript
 {
   "message": "Welcome"
@@ -26,9 +23,6 @@ GET '/'
 ```
 
 ### List all users
-
-GET '/api/users'
-
 ```Javascript
 // Success
 [
@@ -50,9 +44,6 @@ GET '/api/users'
 ```
 
 ### Create User
-
-POST '/api/users/create'
-
 ```Javascript
 // Success
 {
@@ -66,8 +57,6 @@ POST '/api/users/create'
 ```
 
 ### Login
-
-POST /api/login
 ```Javascript
 // Success
 {
