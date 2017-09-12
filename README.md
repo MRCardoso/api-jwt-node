@@ -22,6 +22,21 @@ Are three parths, splited by dot(.), encoded with base64 individually:
 }
 ```
 
+
+### Login
+```Javascript
+// Success
+{
+  "token": "the string with the token generated",
+  "expires": "the expired timestamp",
+  "user": "json with date of the user found"
+}
+// Fail
+{
+  "message": "the fail message"
+}
+```
+
 ### List all users
 ```Javascript
 // Success
@@ -49,20 +64,6 @@ Are three parths, splited by dot(.), encoded with base64 individually:
 {
   "message": "the success message", 
   "data": "the json with user data"
-}
-// Fail
-{
-  "message": "the fail message"
-}
-```
-
-### Login
-```Javascript
-// Success
-{
-  "token": "the string with the token generated",
-  "expires": "the expired timestamp",
-  "user": "json with date of the user found"
 }
 // Fail
 {
